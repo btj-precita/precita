@@ -1,0 +1,44 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magento\Customer\Block\Account\Dashboard\Address $block */
+?>
+<div class="block block-dashboard-addresses">
+    <div class="block-title">
+        <strong><?php /* @escapeNotVerified */ echo __('Address Book') ?></strong>
+        <a class="action edit" href="<?php /* @escapeNotVerified */ echo $block->getAddressBookUrl() ?>" title="<?php /* @escapeNotVerified */ echo __('Manage Addresses') ?>"><i class="fa fa-pencil"></i></a>
+    </div>
+    <div class="block-content row">
+        <div class="box box-billing-address col-sm-6">
+			<div class="box-inner">
+				<strong class="box-title">
+					<span><?php /* @escapeNotVerified */ echo __('Default Billing Address') ?></span>
+					<a class="action edit" href="<?php /* @escapeNotVerified */ echo $block->getPrimaryBillingAddressEditUrl() ?>" data-ui-id="default-billing-edit-link" title="<?php /* @escapeNotVerified */ echo __('Edit Address') ?>"><i class="fa fa-pencil"></i></a>
+				</strong>
+				<div class="box-content">
+					<address>
+						<?php echo $block->getPrimaryBillingAddressHtml() ?>
+					</address>
+				</div>
+            </div>
+        </div>
+        <div class="box box-shipping-address col-sm-6">
+			<div class="box-inner">
+				<strong class="box-title">
+					<span><?php /* @escapeNotVerified */ echo __('Default Shipping Address') ?></span>
+					<a class="action edit" href="<?php /* @escapeNotVerified */ echo $block->getPrimaryShippingAddressEditUrl() ?>" data-ui-id="default-shipping-edit-link" title="<?php /* @escapeNotVerified */ echo __('Edit Address') ?>"><i class="fa fa-pencil"></i></a>
+				</strong>
+				<div class="box-content">
+					<address>
+						<?php echo $block->getPrimaryShippingAddressHtml() ?>
+					</address>
+				</div>
+			</div>
+        </div>
+    </div>
+</div>

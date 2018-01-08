@@ -1,0 +1,24 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<div class="row">
+	<div class="col-sm-6 review-form-wrapper">
+		<?php echo $block->getChildHtml(); ?>
+	</div>
+	<div class="col-sm-6 reviews-wrapper">
+		<div id="product-review-container" data-role="product-review"></div>
+	</div>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Review/js/process-reviews": {
+                "productReviewUrl": "<?php /* @escapeNotVerified */ echo $block->getProductReviewUrl();?>"
+            }
+        }
+    }
+</script>

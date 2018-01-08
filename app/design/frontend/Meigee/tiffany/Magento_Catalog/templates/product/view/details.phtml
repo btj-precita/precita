@@ -1,0 +1,47 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php if ($detailedInfoGroup = $block->getGroupChildNames('detailed_info', 'getChildHtml')):?>
+	<div id="tabs" role="tabpanel">
+		<ul class="nav nav-tabs" role="tablist">
+			<?php $layout = $block->getLayout(); ?>
+            <?php $i=0;
+				foreach ($detailedInfoGroup as $name):
+				$i++;
+				$html = $layout->renderElement($name);
+				if (!trim($html)) {
+					continue;
+				}
+				$alias = $layout->getElementAlias($name);
+				$alias_new = str_replace('.', '_', $alias);
+				$label = $block->getChildData($alias, 'title');
+                ?>
+				<li role="presentation" class="<?php echo $i == 1?' active first':''?>">
+					<a href="#product_tabs_<?php /* @escapeNotVerified */ echo $alias_new ?>" aria-controls="product_tabs_<?php /* @escapeNotVerified */ echo $alias_new ?>" role="tab" data-toggle="tab"><?php /* @escapeNotVerified */ echo $label; ?></a>
+				</li>
+            <?php endforeach;?>
+		</ul>
+		<div class="tab-content">
+			
+			 <?php $i=0;
+				foreach ($detailedInfoGroup as $name):
+					$i++;
+					$html = $layout->renderElement($name);
+					if (!trim($html)) {
+						continue;
+					}
+					$alias = $layout->getElementAlias($name);
+					$alias_new = str_replace('.', '_', $alias);
+					$label = $block->getChildData($alias, 'title');
+				?>
+				<div class="tab-pane fade<?php echo $i == 1?' active first in':''?>" id="product_tabs_<?php echo $alias_new ?>" role="tabpanel"><?php echo $html ?></div>
+			 <?php endforeach;?>
+        </div>
+    </div>
+<?php endif; ?>

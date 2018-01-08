@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Core/etc/config.xsd">
+    <default>
+        <tiffany_general>
+			<tiffany_skins>
+				<site_skin>default.css</site_skin>
+			</tiffany_skins>
+            <tiffany_layout>
+                <site_layout>wide-layout</site_layout>
+                <container_width>1272</container_width>
+            </tiffany_layout>
+            <tiffany_header>
+				<sticky_header>1</sticky_header>
+				<sticky_header_opacity>100</sticky_header_opacity>
+				<!-- <sticky_header_btn>0</sticky_header_btn> -->
+				<sticky_header_tablet>sticky-tablet</sticky_header_tablet>
+				<sticky_header_logo>1</sticky_header_logo>
+				<sticky_header_nav>1</sticky_header_nav>
+				<sticky_header_cart>1</sticky_header_cart>
+				<sticky_header_search>0</sticky_header_search>
+            </tiffany_header>
+            <tiffany_footer>
+                <custom_footer>1</custom_footer>
+                <custom_footer_block>tiffany_footer</custom_footer_block>
+            </tiffany_footer>
+			<tiffany_logo>
+                <custom_logo_status>0</custom_logo_status>
+                <custom_logo_image></custom_logo_image>
+				<custom_logo_alt></custom_logo_alt>
+				<small_logo_status>0</small_logo_status>
+                <small_logo_image></small_logo_image>
+            </tiffany_logo>
+			<tiffany_toplinks>
+				<toplinks_compare>0</toplinks_compare>
+				<toplinks_wishlist>0</toplinks_wishlist>
+				<toplinks_register>0</toplinks_register>
+				<toplinks_login>0</toplinks_login>
+				<toplinks_account>0</toplinks_account>
+			</tiffany_toplinks>
+			<tiffany_product_listing>
+				<grid_columns>three-columns</grid_columns>
+				<product_name>1</product_name>
+				<rating_stars>1</rating_stars>
+				<rating_cust_link>0</rating_cust_link>
+				<review_link>0</review_link>
+				<product_price>1</product_price>
+				<cart_btn>1</cart_btn>
+				<compare_btn>1</compare_btn>
+				<wishlist_btn>1</wishlist_btn>
+				<stock_status>4</stock_status>
+				<!-- <mailtofriend_btn>1</mailtofriend_btn> -->
+				<product_name_aligment>text-center</product_name_aligment>
+				<layer_accordion>1</layer_accordion>
+			</tiffany_product_listing>
+			<tiffany_lang_switcher>
+				<lang_switcher_status>language_flags</lang_switcher_status>
+				<lang_switcher_label>0</lang_switcher_label>
+			</tiffany_lang_switcher>
+			<tiffany_currency_switcher>
+				<currency_switcher_status>Meigee_Tiffany::currency_list.phtml</currency_switcher_status>
+				<currency_switcher_label>0</currency_switcher_label>
+			</tiffany_currency_switcher>
+			<tiffany_lightbox>
+				<lightbox_status>1</lightbox_status>
+				<lightbox_home>1</lightbox_home>
+				<lightbox_listing>0</lightbox_listing>
+				<lightbox_product>1</lightbox_product>
+			</tiffany_lightbox>
+			<tiffany_image_hover>
+				<image_hover_status>1</image_hover_status>
+				<image_hover_type>0</image_hover_type>
+			</tiffany_image_hover>
+			<tiffany_contactmap>
+				<contactmap_status>1</contactmap_status>
+				<contactmap_latitude>40.69370</contactmap_latitude>
+				<contactmap_longitude>-73.94738</contactmap_longitude>
+				<contactmap_zoom>15</contactmap_zoom>
+				<contactmap_type>ROADMAP</contactmap_type>
+				<contactmap_marker>1</contactmap_marker>
+				<contactmap_marker_title>Brooklyn, NY, United States</contactmap_marker_title>
+				<contactmap_block_status>1</contactmap_block_status>
+				<contactmap_block_static>tiffany_contact_map_block</contactmap_block_static>
+				<contactmap_block_width>260</contactmap_block_width>
+				<contactmap_block_height>129</contactmap_block_height>
+				<contactmap_block_position>right-bottom</contactmap_block_position>
+			</tiffany_contactmap>
+        </tiffany_general>
+        <tiffany_bg_slider>
+			<tiffany_bgslider_options>
+				<bgslider_status>1</bgslider_status>
+				<bgslider_fade>22</bgslider_fade>
+				<bgslider_duration>1</bgslider_duration>
+				<bgslider_slides></bgslider_slides>
+			</tiffany_bgslider_options>
+        </tiffany_bg_slider>
+
+
+        <tiffany_section2>
+            <tiffany_group3>
+                <field____1>1</field____1>
+                <field____2>Tutorial - Simple News</field____2>
+                <field____3>1</field____3>
+                <field____4>1</field____4>
+                <field____5>1</field____5>
+                <field____6>1</field____6>
+                <field____7>1</field____7>
+                <field____7_1>1</field____7_1>
+                <field____8>1</field____8>
+                <field____9>1</field____9>
+            </tiffany_group3>
+            <tiffany_group4>
+                <field____11>1</field____11>
+                <field____12>1</field____12>
+                <field____13>1</field____13>
+                <field____14>1</field____14>
+                <field____15>1</field____15>
+                <field____16>1</field____16>
+                <field____17>1</field____17>
+                <field____172>0</field____172>
+                <field____173>1</field____173>
+            </tiffany_group4>
+        </tiffany_section2>
+
+
+
+
+
+
+    </default>
+</config>
