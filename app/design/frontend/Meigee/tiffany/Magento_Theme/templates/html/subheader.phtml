@@ -1,0 +1,18 @@
+<?php
+	$meigee_helper = $this->helper('\Meigee\Tiffany\Helper\TiffanyGeneral');
+	$contentWidth = $meigee_helper->getCustomThemeOptionCnf('tiffany_layout', 'container_width');
+	$sticky_opacity = $meigee_helper->getCustomThemeOptionCnf('tiffany_header', 'sticky_header_opacity');
+	$custom_skin = $meigee_helper->getCustomThemeOptionCnf('tiffany_skins', 'site_skin');
+	$custom_skin_font = substr($custom_skin, 0, -4);
+?>
+<?php if($custom_skin_font == 'default') { ?>
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800italic,800' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+<?php } else { ?>
+	<link href="<?php echo ($this->getViewFileUrl('css/skins').'/'.$custom_skin); ?>" rel="stylesheet" type="text/css" />
+<?php } ?>
+<style type="text/css">
+	body.boxed-layout .container,
+	body .container {max-width: <?php echo $contentWidth; ?>px; width: 100%;}
+	#sticky-header {opacity: <?php echo $sticky_opacity/100; ?>;}
+</style>

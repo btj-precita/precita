@@ -1,0 +1,16 @@
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<div class="table-wrapper" data-bind="blockLoader: isLoading">
+	<div class="block-title"><strong data-bind="text: $t('Total')"></strong></div>
+    <table class="data table totals">
+        <tbody>
+        <!-- ko foreach: elems() -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        <!-- /ko -->
+        </tbody>
+    </table>
+</div>

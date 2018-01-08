@@ -1,0 +1,59 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php $url = $block->getReviewsUrl() . '#product_tabs_reviews'; ?>
+<?php $urlForm = $block->getReviewsUrl() . '#product_tabs_reviews'; ?>
+<?php if ($block->getReviewsCount()): ?>
+<?php $rating = $block->getRatingSummary();
+$rating_stars = $this->helper('\Meigee\Tiffany\Helper\TiffanyGeneral')->getCustomThemeOptionCnf('tiffany_product_listing', 'rating_stars');
+$rating_cust_link = $this->helper('\Meigee\Tiffany\Helper\TiffanyGeneral')->getCustomThemeOptionCnf('tiffany_product_listing', 'rating_cust_link');
+$review_link = $this->helper('\Meigee\Tiffany\Helper\TiffanyGeneral')->getCustomThemeOptionCnf('tiffany_product_listing', 'review_link');
+
+ ?>
+<div class="product-reviews-summary<?php echo !$rating ? ' no-rating' : ''?>">
+    <?php if ($rating && $rating_stars):?>
+    <div class="rating-summary">
+         <span class="label"><span><?php /* @escapeNotVerified */ echo __('Rating') ?>:</span></span>
+         <div class="rating-result" title="<?php /* @escapeNotVerified */ echo $rating; ?>%">
+			<i class="fa fa-star"></i>
+			<i class="fa fa-star"></i>
+			<i class="fa fa-star"></i>
+			<i class="fa fa-star"></i>
+			<i class="fa fa-star"></i>
+			<span style="width:<?php /* @escapeNotVerified */ echo $rating; ?>%">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+			</span>
+		 </div>
+     </div>
+    <?php endif;
+	if($rating_cust_link || $review_link) {
+	?>
+		<div class="reviews-actions">
+			<?php if($rating_cust_link) { ?>
+				<a class="action view" href="<?php /* @escapeNotVerified */ echo $url ?>"><span><?php /* @escapeNotVerified */ echo $block->getReviewsCount() ?></span>&nbsp;<span><?php /* @escapeNotVerified */ echo($block->getReviewsCount() == 1) ? __('Review') : __('Reviews') ?></span></a>
+			<?php } 
+			if($review_link) { ?>
+				<a class="action add" href="<?php /* @escapeNotVerified */ echo $urlForm ?>"><?php /* @escapeNotVerified */ echo __('Add Your Review') ?></a>
+			<?php } ?>
+		</div>
+	<?php } ?>
+</div>
+<?php elseif ($block->getDisplayIfEmpty()): ?>
+<div class="product-reviews-summary empty">
+    <div class="reviews-actions">
+        <a class="action add" href="<?php /* @escapeNotVerified */ echo $urlForm; ?>">
+            <?php /* @escapeNotVerified */ echo __('Be the first to review this product') ?>
+        </a>
+    </div>
+</div>
+<?php endif; ?>

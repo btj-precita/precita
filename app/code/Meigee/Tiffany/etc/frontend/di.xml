@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+
+
+
+    <!-- preference for='Magento\Framework\View\Layout\Reader\Block' type='\Meigee\Tiffany\Preference\View\Block' / -->
+    <!--<preference for='Magento\Framework\View\Layout\Reader\Container' type='Meigee\Tiffany\Preference\View\Container' />-->
+    <!--<preference for='Magento\Framework\View\Layout\Reader\Move' type='Meigee\Tiffany\Preference\View\Move' />-->
+    <!--<preference for='Magento\Framework\View\Layout\Reader\UiComponent' type='Meigee\Tiffany\Preference\View\UiComponent' />-->
+    <!--<preference for='Magento\Framework\View\Page\Config\Reader\Body' type='Meigee\Tiffany\Preference\View\Body' />-->
+    <!--<preference for='Magento\Framework\View\Page\Config\Reader\Head' type='Meigee\Tiffany\Preference\View\Head' />-->
+    <!--<preference for='Magento\Framework\View\Page\Config\Reader\Html' type='Meigee\Tiffany\Preference\View\Html' />-->
+
+
+  
+<!--<preference for='Magento\Framework\View\Layout\Reader\Block' type='\Meigee\Tiffany\Preference\View\Block' />-->
+
+
+
+
+
+<preference for='Magento\Framework\View\Layout\Reader\Block' type='Meigee\Tiffany\Preference\View\Block' />
+<preference for='Magento\Framework\View\Layout\Reader\Container' type='Meigee\Tiffany\Preference\View\Container' />
+<preference for='Magento\Framework\View\Layout\Reader\Move' type='Meigee\Tiffany\Preference\View\Move' />
+<preference for='Magento\Framework\View\Layout\Reader\UiComponent' type='Meigee\Tiffany\Preference\View\UiComponent' />
+
+<preference for='Magento\Framework\View\Page\Config\Reader\Body' type='Meigee\Tiffany\Preference\View\Body' />
+<preference for='Magento\Framework\View\Page\Config\Reader\Head' type='Meigee\Tiffany\Preference\View\Head' />
+<preference for='Magento\Framework\View\Page\Config\Reader\Html' type='Meigee\Tiffany\Preference\View\Html' />
+
+</config>

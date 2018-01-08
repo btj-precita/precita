@@ -1,0 +1,23 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+/** @var $block Magento\Catalog\Block\Product\ProductList\Item\AddTo\Compare */
+
+$meigee_helper = $this->helper('\Meigee\Tiffany\Helper\TiffanyGeneral');
+$compare_btn = $meigee_helper->getCustomThemeOptionCnf('tiffany_product_listing', 'compare_btn');
+?>
+<?php if($compare_btn){ ?>
+<a href="#"
+   class="action tocompare"
+   title="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
+   aria-label="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
+   data-post='<?php /* @escapeNotVerified */ echo $block->getCompareHelper()->getPostDataParams($block->getProduct()); ?>'
+   role="button">
+   <i class="ion-arrow-swap"></i>
+   <span><?php /* @escapeNotVerified */ echo __('to Compare'); ?></span>
+</a>
+<?php } ?>

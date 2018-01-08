@@ -1,0 +1,492 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="tiffany_tab" translate="label" sortOrder="100">
+			<label>Tiffany</label>
+		</tab>
+		<section id="tiffany_general" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+			<label>General Options</label>
+			<tab>tiffany_tab</tab>
+			<resource>Meigee_Tiffany::system_config</resource>
+			<group id="tiffany_skins" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Skins</label>
+				<field id="site_skin" translate="label" type="radio" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Select your skin</label>
+					<source_model>Meigee\Tiffany\Model\Config\Source\SiteSkins</source_model>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\InputRadio\Horizontal</frontend_model>
+				</field>
+			</group>
+			<group id="tiffany_layout" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Layout</label>
+				<field id="site_layout" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Site layout</label>
+					<source_model>Meigee\Tiffany\Model\Config\Source\SiteLayout</source_model>
+				</field>
+				<field id="container_width" translate="label comment" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Content width</label>
+					<comment>Specify value in pixels, do not add "px" suffix. Width can be set between 1000 - 3000px. Default paddings will be added to the content width.</comment>
+				</field>
+			</group>
+			<group id="tiffany_header" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Header</label>
+				<field id="sticky_header" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Sticky header</label>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="sticky_header_opacity" translate="label comment" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Sticky header opacity</label>
+					<comment>Set Sticky Header Opacity in percentages (1-100)</comment>
+				</field>
+				<!-- <field id="sticky_header_btn" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Sticky header Front End Close Button</label>
+					<comment>Will show Close button on Sticky Header, clicking on which will close the sticky header</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field> -->
+				<field id="sticky_header_tablet" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Sticky header for Tablet:</label>
+					<source_model>Meigee\Tiffany\Model\Config\Source\StickyTablet</source_model>
+				</field>
+				<field id="sticky_header_logo" translate="label comment" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Display logo on sticky header</label>
+					<comment>If the navigation menu has many top categories, other elements will have lack of space.</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="sticky_header_nav" translate="label comment" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Display navigation on sticky header</label>
+					<comment>If the navigation menu has many top categories, other elements will have lack of space.</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<!-- <field id="sticky_header_cart" translate="label comment" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Display cart on sticky header</label>
+					<comment>If the navigation menu has many top categories, other elements will have lack of space.</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field> -->
+				<field id="sticky_header_search" translate="label comment" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Display search on sticky header</label>
+					<comment>If the navigation menu has many top categories, other elements will have lack of space.</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+			</group>
+			<group id="tiffany_footer" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Footer</label>
+				<field id="custom_footer" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Custom Footer</label>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="custom_footer_block" translate="label comment" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Custom Footer Static Block</label>
+					<depends>
+						<field id="custom_footer">1</field>
+					</depends>
+					<!-- <comment><![CDATA[There are following predefined static blocks which can be used:<ul style="margin-left:13px;"><li>tiffany_footer</li><li>tiffany_footer_2</li><li>tiffany_footer_3</li><li>tiffany_footer_4</li></ul><strong style="color:red">Please refer to the "Footer" section of the user guide that comes with the theme for more information</strong>]]></comment> -->
+				</field>
+			</group>
+			<group id="tiffany_logo" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Custom Logo</label>
+				<field id="custom_logo_status" translate="label comment" type="hidden" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Logo status</label>
+					<comment>Disable it to use default logo</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+                <field id="custom_logo_image" translate="label" type="image" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Upload your logo</label>
+					<depends>
+						<field id="custom_logo_status">1</field>
+					</depends>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+					<upload_dir config="system/filesystem/media" scope_info="1">logo/</upload_dir>
+					<base_url type="media" scope_info="1">logo/</base_url>
+				</field>
+				<field id="custom_logo_alt" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Alternate text for logo</label>
+				</field>
+				<field id="small_logo_status" translate="label comment" type="hidden" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Small Logo status</label>
+					<comment>Will be used in sticky header.</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="small_logo_image" translate="label" type="image" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Upload your small logo</label>
+					<depends>
+						<field id="small_logo_status">1</field>
+					</depends>
+					<backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+					<upload_dir config="system/filesystem/media" scope_info="1">logo/</upload_dir>
+					<base_url type="media" scope_info="1">logo/</base_url>
+				</field>
+			</group>
+			<group id="tiffany_toplinks" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Top links</label>
+				<!-- <field id="toplinks_type" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Top links type</label>
+					<comment>If default is set, then links will be shown like in default magento. If custom - then they will be shown as dropdown list (like on demo)</comment>
+					<source_model>Meigee\Tiffany\Model\Config\Source\ToplinksType</source_model>
+				</field> -->
+				<field id="toplinks_account" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<depends>
+						<field id="toplinks_type">1</field>
+					</depends>
+					<label>My Account Link</label>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\OnOffInvert</frontend_model>
+				</field>
+				<field id="toplinks_wishlist" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>My Wishlist Link</label>
+					<depends>
+						<field id="toplinks_type">1</field>
+					</depends>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\OnOffInvert</frontend_model>
+				</field>
+				<field id="toplinks_compare" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Compare Link</label>
+					<depends>
+						<field id="toplinks_type">1</field>
+					</depends>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\OnOffInvert</frontend_model>
+				</field>
+				<!-- <field id="toplinks_cart" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>My Cart Link</label>
+					<depends>
+						<field id="toplinks_type">1</field>
+					</depends>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="toplinks_checkout" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Checkout Link</label>
+					<depends>
+						<field id="toplinks_type">1</field>
+					</depends>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field> -->
+				<field id="toplinks_register" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Register Link</label>
+					<depends>
+						<field id="toplinks_type">1</field>
+					</depends>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\OnOffInvert</frontend_model>
+				</field>
+				<field id="toplinks_login" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Login Link</label>
+					<depends>
+						<field id="toplinks_type">1</field>
+					</depends>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\OnOffInvert</frontend_model>
+				</field>
+			</group>
+			<group id="tiffany_product_listing" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Product Listing</label>
+				<field id="grid_columns" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Number of columns in grid view</label>
+					<source_model>Meigee\Tiffany\Model\Config\Source\GridColumns</source_model>
+				</field>
+				<field id="product_name" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Product Name</label>
+					<comment>Enable or disable Product Name</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="rating_stars" translate="label comment" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Rating Stars</label>
+					<comment>Enable or disable Rating Stars</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="rating_cust_link" translate="label comment" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Ratings Customer link</label>
+					<comment>Enable or disable Ratings Customer link</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="review_link" translate="label comment" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>"Add your review" link</label>
+					<comment>Enable or disable "Add your review" link</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="product_price" translate="label comment" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Product Price</label>
+					<comment>Enable or disable Product Price</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="cart_btn" translate="label comment" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Button "Add to cart"</label>
+					<comment>Enable or disable Button "Add to cart"</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="compare_btn" translate="label comment" type="text" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Button "Compare products"</label>
+					<comment>Enable or disable Button "Compare products"</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="wishlist_btn" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Button "Wishlist"</label>
+					<comment>Enable or disable Button "Wishlist"</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="stock_status" translate="label comment" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Stock status</label>
+					<comment>Enable or disable Stock status</comment>
+					<source_model>Meigee\Tiffany\Model\Config\Source\StockStatus</source_model>
+				</field> 
+<!-- 				<field id="mailtofriend_btn" translate="label comment" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Button "Mail to Friend"</label>
+					<comment>Enable or disable Button "Mail to Friend"</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field> -->
+				<field id="product_name_aligment" translate="label comment" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Product Name Alignment</label>
+					<comment>Product names will be aligned relatively product images</comment>
+					<source_model>Meigee\Tiffany\Model\Config\Source\ProductNameAlignment</source_model>
+				</field>
+				<field id="layer_accordion" translate="label comment" type="select" sortOrder="16" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Open Layered Navigation by default</label>
+					<!-- <comment>Product names will be aligned relatively product images</comment> -->
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\OnOff</frontend_model>
+				</field>
+			</group>
+			<group id="tiffany_lang_switcher" translate="label" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Language Switcher</label>
+				<field id="lang_switcher_status" translate="label" type="radio" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Status</label>
+					<source_model>Meigee\Tiffany\Model\Config\Source\LangSwitcher</source_model>
+                    <frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\InputRadio\Horizontal</frontend_model>
+				</field>
+				<field id="lang_switcher_label" translate="label comment" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Language label</label>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+			</group>
+			<group id="tiffany_currency_switcher" translate="label" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Currency Switcher</label>
+				<field id="currency_switcher_status" translate="label" type="radio" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Status</label>
+					<source_model>Meigee\Tiffany\Model\Config\Source\CurrencySwitcher</source_model>
+                    <frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\InputRadio\Horizontal</frontend_model>
+				</field>
+				<field id="currency_switcher_label" translate="label comment" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Currency label</label>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+			</group>
+			<group id="tiffany_lightbox" translate="label" type="text" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Lightbox</label>
+				<field id="lightbox_status" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Status</label>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="lightbox_home" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Homepage</label>
+					<depends>
+						<field id="lightbox_status">1</field>
+					</depends>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="lightbox_listing" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Products Listing</label>
+					<depends>
+						<field id="lightbox_status">1</field>
+					</depends>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+			</group>
+			<group id="tiffany_image_hover" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Product Hover Effect</label>
+				<field id="image_hover_status" translate="label comment" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Status</label>
+					<comment>To use hover effect for a product set a label for needed image as "hover".</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="image_hover_type" translate="label comment" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Effect Type</label>
+					<comment>Choose effect for appearing hover images</comment>
+					<source_model>Meigee\Tiffany\Model\Config\Source\ImageHoverType</source_model>
+				</field>
+			</group>
+			<group id="tiffany_contactmap" translate="label" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Contact Map</label>
+				<field id="contactmap_status" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Map</label>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="contactmap_api" translate="label comment" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Google Maps API</label>
+					<depends>
+						<field id="contactmap_status">1</field>
+					</depends>
+					<comment>Please enter API Key. More information: https://developers.google.com/maps/documentation/javascript/get-api-key</comment>
+				</field>
+				<field id="contactmap_latitude" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Latitude</label>
+					<depends>
+						<field id="contactmap_status">1</field>
+					</depends>
+					<comment>Please enter Latitude</comment>
+				</field>
+				<field id="contactmap_longitude" translate="label comment" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Longitude</label>
+					<depends>
+						<field id="contactmap_status">1</field>
+					</depends>
+					<comment>Please enter Longitude</comment>
+				</field>
+				<field id="contactmap_zoom" translate="label comment" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Map Zoom</label>
+					<depends>
+						<field id="contactmap_status">1</field>
+					</depends>
+					<comment>Please specify map zoom</comment>
+				</field>
+				<field id="contactmap_type" translate="label comment" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Map Type</label>
+					<depends>
+						<field id="contactmap_status">1</field>
+					</depends>
+					<comment>Please specify map type</comment>
+					<source_model>Meigee\Tiffany\Model\Config\Source\ContactmapType</source_model>
+				</field>
+				<field id="contactmap_marker" translate="label comment" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Marker</label>
+					<depends>
+						<field id="contactmap_status">1</field>
+					</depends>
+					<comment>Enable or Disable Marker</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="contactmap_marker_title" translate="label" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Marker Title</label>
+					<depends>
+						<field id="contactmap_status">1</field>
+						<field id="contactmap_marker">1</field>
+					</depends>
+				</field>
+				<field id="contactmap_block_status" translate="label comment" type="text" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Details block status</label>
+					<depends>
+						<field id="contactmap_status">1</field>
+					</depends>
+					<comment>Will show block with detailed information over the Google map</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="contactmap_block_static" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Static Block for Details</label>
+					<depends>
+						<field id="contactmap_status">1</field>
+						<field id="contactmap_block_status">1</field>
+					</depends>
+					<comment>Please specify static block name</comment>
+				</field>
+				<field id="contactmap_block_width" translate="label comment" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Details Block Width</label>
+					<depends>
+						<field id="contactmap_status">1</field>
+						<field id="contactmap_block_status">1</field>
+					</depends>
+					<comment>Please specify block width in pixels</comment>
+				</field>
+				<field id="contactmap_block_height" translate="label comment" type="text" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Details Block Width</label>
+					<depends>
+						<field id="contactmap_status">1</field>
+						<field id="contactmap_block_status">1</field>
+					</depends>
+					<comment>Please specify block height in pixels</comment>
+				</field>
+				<field id="contactmap_block_position" translate="label comment" type="select" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Details Block Position</label>
+					<depends>
+						<field id="contactmap_status">1</field>
+						<field id="contactmap_block_status">1</field>
+					</depends>
+					<comment>Please set one of four available details block position over the Gmap</comment>
+					<source_model>Meigee\Tiffany\Model\Config\Source\ContactmapBlockPos</source_model>
+				</field>
+			</group>
+        </section>
+
+
+
+
+        <section id="tiffany_bg_slider" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Meigee Background Slider</label>
+            <tab>tiffany_tab</tab>
+            <resource>Meigee_Tiffany::system_config</resource>
+
+            <group id="tiffany_bgslider_options" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Options</label>
+				<field id="bgslider_status" translate="label comment" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enabled</label>
+					<comment>Will work only on "boxed" layout</comment>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\CheckboxSwitch\EnableDisable</frontend_model>
+				</field>
+				<field id="bgslider_fade" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Fade</label>
+					<validate>required-entry</validate>
+					<depends>
+						<field id="bgslider_status">1</field>
+					</depends>
+				</field>
+				<field id="bgslider_duration" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Duration</label>
+					<depends>
+						<field id="bgslider_status">1</field>
+					</depends>
+				</field>
+				<field id="bgslider_slides" translate="label" type="Meigee\Tiffany\Block\Adminhtml\System\FormElements\Image" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Background Slider Images</label>
+					<frontend_model>Meigee\Tiffany\Block\Adminhtml\System\Config\ChoiceImgs</frontend_model>
+					 <backend_model>Meigee\Tiffany\Model\Config\Backend\ChoiceImgs</backend_model>
+					<upload_dir config="system/filesystem/media" scope_info="0">meigee/background_slider</upload_dir>
+					<base_url type="media" scope_info="0">meigee/background_slider/</base_url>
+					<depends>
+						<field id="bgslider_status">1</field>
+					</depends>
+				</field>
+            </group>
+
+            <!--  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!  -->
+            <!--  !!!!!!!!!!  group2  !!!!!!!!!  -->
+            <!--  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!  -->
+
+
+            <!--<group id="tiffany_group4" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">-->
+                <!--<label>General Theme Settings group 2-2</label>-->
+                <!---->
+				<!--<field id="field____11" translate="label comment" type="text" sortOrder="119" showInDefault="1" showInWebsite="0" showInStore="0">-->
+                    <!--<label>field____11</label>-->
+                    <!--<comment>If 0 is specified, CAPTCHA on the Login form will be always available.</comment>-->
+                    <!--<depends>-->
+                        <!--<field id="mode">after_fail</field>-->
+                        <!--<field id="enable">1</field>-->
+                    <!--</depends>-->
+                    <!--<frontend_class>required-entry validate-digits</frontend_class>-->
+                <!--</field>-->
+                <!--<field id="field____12" type="image" sortOrder="1110" showInDefault="1" showInWebsite="1" showInStore="1">-->
+                    <!--<label>field____12</label>-->
+                    <!--<backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>-->
+                    <!--<upload_dir config="system/filesystem/media" scope_info="1">catalog/product/placeholder</upload_dir>-->
+                    <!--<base_url type="media" scope_info="1">catalog/product/placeholder</base_url>-->
+                <!--</field>-->
+
+                <!--<field id="field____13" type="textarea" sortOrder="1111" showInDefault="1" showInWebsite="1" showInStore="1">-->
+                    <!--<label>field____13</label>-->
+                <!--</field>-->
+
+                <!--<field id="field____14" translate="label" type="Magento\OfflineShipping\Block\Adminhtml\Form\Field\Export" sortOrder="1112" showInDefault="0" showInWebsite="1" showInStore="0">-->
+                    <!--<label>field____14</label>-->
+                <!--</field>-->
+
+
+                <!--<field id="field____15" translate="label" type="Magento\OfflineShipping\Block\Adminhtml\Form\Field\Import" sortOrder="1113" showInDefault="0" showInWebsite="1" showInStore="0">-->
+                    <!--<label>field____15</label>-->
+                    <!--<backend_model>Magento\OfflineShipping\Model\Config\Backend\Tablerate</backend_model>-->
+                <!--</field>-->
+
+                <!--<field id="field____17" translate="label comment" type="button" sortOrder="1114" showInDefault="1" showInWebsite="1" showInStore="1">-->
+                    <!--<label>field____17!!!!!</label>-->
+                    <!--<frontend_model>Magento\Backend\Block\Page\System\Config\Robots\Reset</frontend_model>-->
+                    <!--<comment>This action will delete your custom instructions and reset robots.txt file to system's default settings.</comment>-->
+                <!--</field>-->
+            <!--</group>-->
+        </section>
+
+
+
+
+    </system>
+</config>
