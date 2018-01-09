@@ -7497,8 +7497,3 @@ a.btn-md{
         -webkit-transform:rotate(1turn)
     }
 }
-
-/*header*/
-.page-header .middle-block {
-    padding-top: 20px; padding-bottom: 20px; text-align: center;
-}
