@@ -47,8 +47,7 @@
            <block class="Meigee\Tiffany\Block\Frontend\CustomLogo" name="logo" as="logo" template="Magento_Theme::html/header/logo.phtml">
                 <arguments>
                     <argument name="logo_file" xsi:type="string">images/logo.png</argument>
-                    <argument name="logo_img_width" xsi:type="number">275</argument>
-                    <argument name="logo_img_height" xsi:type="number">64</argument>
+                    <argument name="logo_img_height" xsi:type="number">100</argument>
                 </arguments>
             </block>
 			 <referenceBlock name="top.links">
@@ -95,15 +94,13 @@
 				<container name="sticky.header.left" htmlClass="left-wrapper" htmlTag="div" meigee-config-bool="tiffany_general/tiffany_header/sticky_header_logo">
 					<block class="Meigee\Tiffany\Block\Frontend\CustomLogo" name="sticky.logo" as="sticky.logo" template="Magento_Theme::html/header/small_logo.phtml" meigee-config-ibool="tiffany_general/tiffany_header/small_logo_status">
 						<arguments>
-							<argument name="logo_img_width" xsi:type="number">137</argument>
-							<argument name="logo_img_height" xsi:type="number">32</argument>
+							<argument name="logo_img_height" xsi:type="number">64</argument>
 							<argument name="logo_file" xsi:type="string">images/small_logo.png</argument>
 						</arguments>
 					</block>
 					<block class="Meigee\Tiffany\Block\Frontend\CustomLogo" name="sticky.logo" as="sticky.logo" template="Magento_Theme::html/header/small_logo.phtml" meigee-config-bool="tiffany_general/tiffany_header/small_logo_status">
 						<arguments>
-							<argument name="logo_img_width" xsi:type="number">137</argument>
-							<argument name="logo_img_height" xsi:type="number">32</argument>
+							<argument name="logo_img_height" xsi:type="number">64</argument>
 							<argument name="logo_file" xsi:type="string">images/small_logo.png</argument>
 						</arguments>
 					</block>
