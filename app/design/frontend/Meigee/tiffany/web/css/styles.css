@@ -79,7 +79,7 @@ body .h5 {font-size: 14px; line-height: 18px; font-weight: 400;}
 body h6,
 body .h6 {font-size: 12px; line-height: 16px; font-weight: 400;}
 
-img:not(.fotorama__img .logo img) {max-width: 100%; /*width: auto;*/ height: auto!important;}
+img:not(.fotorama__img) {max-width: 100%; /*width: auto;*/ height: auto!important;}
 
 .skincolor {color: #259bd2;}
 .skincolor-2 {color: #25ccd2;}
