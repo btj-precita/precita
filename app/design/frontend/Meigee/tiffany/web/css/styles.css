@@ -648,7 +648,7 @@ body .page-header {margin: 0; border: none; padding: 0; color: rgba(0,0,0,.6);}
 /* !Header Search */
 
 /* Header Nav */
-.header-wrapper .menu-inner {border-bottom: 1px solid rgba(0,0,0,.13); text-align: center;}
+.header-wrapper .menu-inner {text-align: center;}
 .header-wrapper .toggle-nav {float: none;}
 .header-wrapper .navbar-default {border: none; background: none; padding: 0; border-radius: 0; margin: 0; min-height: 1px; margin-bottom: -1px; display: inline-block; vertical-align: top;}
 .header-wrapper .navbar-collapse.collapse {padding: 0;}
