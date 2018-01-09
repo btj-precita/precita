@@ -3942,7 +3942,6 @@ body{
 @media only screen and (max-width:767px){
     body{
         height:100%;
-        overflow:hidden
     }
 }
 .wrapper{
@@ -7497,4 +7496,9 @@ a.btn-md{
     to{
         -webkit-transform:rotate(1turn)
     }
+}
+
+/*header*/
+.page-header .middle-block {
+    padding-top: 20px; padding-bottom: 20px; text-align: center;
 }
