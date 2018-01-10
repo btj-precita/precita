@@ -6243,7 +6243,7 @@ a.btn-md{
     display:inline-block;
     margin-left:5px;
     font-size:13px;
-    color:#000;
+    color:#259bd2;
     letter-spacing:1px;
     text-transform:uppercase
 }
@@ -7498,6 +7498,6 @@ a.btn-md{
     }
 }
 
-.header .logo {
+.header .logo{
     display: contents !important;
 }
