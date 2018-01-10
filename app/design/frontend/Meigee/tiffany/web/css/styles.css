@@ -2008,7 +2008,7 @@ body .swatch-option-tooltip-layered .corner {bottom: -2px;}
 #product-sendtofriend-form > .actions-toolbar .primary {float: right;}
 
 /* Product View =========================================================================== */
-.product-top-block {padding-bottom: 4.5em;}
+.product-top-block {padding-bottom: 1.5em;}
 .product-top-block .product.media {position: relative;}
 .product-top-block .product.media .product-reviews-summary {position: absolute; right: 20px; top: 10px; background: #fff; padding: 0 5px; z-index: 999;}
 .product-top-block .product.media .product-reviews-summary .rating-summary {margin: 0;}
