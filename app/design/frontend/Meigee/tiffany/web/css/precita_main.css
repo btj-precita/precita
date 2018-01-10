@@ -7497,3 +7497,7 @@ a.btn-md{
         -webkit-transform:rotate(1turn)
     }
 }
+
+.header .logo {
+    display: contents !important;
+}
