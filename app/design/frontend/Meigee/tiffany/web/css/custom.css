@@ -1,3 +1,4 @@
 .footer .subscribe-block  {
     background-image: url("../images/footermail.png");
+    float:none;
 }
