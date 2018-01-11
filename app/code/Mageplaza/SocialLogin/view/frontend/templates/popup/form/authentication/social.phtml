@@ -21,7 +21,7 @@
 ?>
 <?php $availableSocials = $block->getAvailableSocials(); ?>
 <?php if ($block->canShow(\Mageplaza\SocialLogin\Model\System\Config\Source\Position::PAGE_POPUP) && sizeof($availableSocials)): ?>
-    <div class="block social-login-authentication-channel col-mp mp-5">
+    <div class="block social-login-authentication-channel col-mp mp-12">
         <div class="block-title">
             <?php echo __('Or Sign In With') ?>
         </div>
@@ -39,7 +39,7 @@
     </div>
     <script type="text/javascript">
         require(['jquery'], function ($) {
-            $('#social-login-authentication').addClass('mp-7');
+            $('#social-login-authentication').addClass('mp-12');
         });
     </script>
 <?php endif; ?>
