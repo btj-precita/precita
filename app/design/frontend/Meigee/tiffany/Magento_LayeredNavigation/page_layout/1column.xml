@@ -16,10 +16,10 @@
 				<argument name="block_id" xsi:type="string">tiffany_footer</argument>
 			</arguments>
 		</block>
-		
+
 		<action method="setTemplate">
 			<argument name="template" xsi:type="string">Magento_LayeredNavigation::layer/view2.phtml</argument>
 		</action>
-		
+
 	</referenceBlock>
 </layout>

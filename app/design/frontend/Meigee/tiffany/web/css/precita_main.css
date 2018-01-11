@@ -3985,9 +3985,9 @@ a:active,a:focus,a:hover{
     color:#3ac2cc;
     text-decoration:none
 }
-a:active i,a:focus i,a:hover i{
-    color:#000
-}
+/*a:active i,a:focus i,a:hover i{*/
+    /*color:#000*/
+/*}*/
 :active,:active:focus,:focus{
     outline:none;
     box-shadow:none
