@@ -50,5 +50,15 @@ module.exports = {
             'css/styles'
         ],
         dsl: 'less'
-    }
+    },
+    tiffany: {
+        area: 'frontend',
+        name: 'Meigee/tiffany',
+        locale: 'vi_VN',
+        files: [
+            'css/styles-m',
+            'css/styles-l'
+        ],
+        dsl: 'less'
+    },
 };

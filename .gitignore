@@ -51,7 +51,3 @@ atlassian*
 !/var/.htaccess
 /vendor/*
 !/vendor/.htaccess
-
-var/\.htaccess
-
-pub/media/
