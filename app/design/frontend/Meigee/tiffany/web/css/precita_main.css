@@ -7498,8 +7498,61 @@ a.btn-md{
     }
 }
 
+.responsive-menu{
+    display: none;
+}
+
 @media screen and (max-width:767px){
     .page-header .logo{
         display: unset !important;
     }
+
+    .responsive-menu{
+        display: inline-block;
+        vertical-align: middle;
+        padding-top: 5px;
+    }
+
+    .header-wrapper .navbar-default {
+        position: relative !important;
+        top: unset !important;
+    }
+
+    .page-header .action.nav-toggle span {display: none !important;}
+    .minicart-wrapper .title-cart {
+        padding: 0 10px !important;
+    }
+    .page-header .action.nav-toggle{
+        padding: 0 !important;
+    }
+
+    .minicart-wrapper{
+        float: unset !important;
+    }
+
+    .desktop-menu {
+        display: none;
+    }
 }
+
+@media only screen and (max-width: 1007px) and (min-width: 768px){
+    .page-header .logo {
+        vertical-align: top !important;
+    }
+
+    .responsive-menu{
+        display: inline-block;
+        vertical-align: top;
+        padding-top: 10px;
+    }
+
+    .header-wrapper .navbar-default {
+        position: relative !important;
+        top: unset !important;
+    }
+
+    .desktop-menu {
+        display: none;
+    }
+}
+
