@@ -68,6 +68,7 @@ define([
         },
 
         initObject: function () {
+            debugger;
             this.loginForm = $(this.options.loginForm);
             this.createForm = $(this.options.createForm);
             this.forgotForm = $(this.options.forgotForm);
