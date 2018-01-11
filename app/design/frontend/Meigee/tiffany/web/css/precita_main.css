@@ -7498,6 +7498,8 @@ a.btn-md{
     }
 }
 
-.header .logo{
-    display: contents !important;
+@media screen and (max-width:767px){
+    .page-header .logo{
+        display: unset !important;
+    }
 }

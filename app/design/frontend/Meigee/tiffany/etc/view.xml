@@ -224,11 +224,11 @@
         </var>
 
         <var name="magnifier">
-            <var name="fullscreenzoom">10</var>  <!-- Zoom for fullscreen (integer)-->
+            <var name="fullscreenzoom">3</var>  <!-- Zoom for fullscreen (integer)-->
             <var name="top">0</var> <!-- Top position of magnifier -->
             <var name="left">0</var> <!-- Left position of magnifier -->
-            <var name="width">600</var> <!-- Width of magnifier block -->
-            <var name="height">600</var> <!-- Height of magnifier block -->
+            <var name="width">750</var> <!-- Width of magnifier block -->
+            <var name="height">750</var> <!-- Height of magnifier block -->
             <var name="eventType">hover</var> <!-- Action that atcivates zoom (hover/click) -->
             <var name="enabled">true</var> <!-- Turn on/off magnifier (true/false) -->
         </var>
