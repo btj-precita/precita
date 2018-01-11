@@ -20,9 +20,9 @@
     <a class="small-logo" href="<?php echo $block->getUrl(''); ?>" title="<?php /* @escapeNotVerified */ echo $storeName ?>">
 <?php endif ?>
         <img src="<?php /* @escapeNotVerified */ echo $block->getLogoSrc('small_logo_image', 'small_logo_status') ?>"
-             alt="<?php /* @escapeNotVerified */ echo $block->getLogoAlt() ?>"
-             <?php echo $block->getLogoWidth() ? 'width="' . $block->getLogoWidth() . '"' : '' ?>
-             <?php echo $block->getLogoHeight() ? 'height="' . $block->getLogoHeight() . '"' : '' ?>
+             alt="<?php /* @escapeNotVerified */ echo $block->getLogoAlt() ?>" height="64"
+             <?php //echo $block->getLogoWidth() ? 'width="' . $block->getLogoWidth() . '"' : '' ?>
+             <?php //echo $block->getLogoHeight() ? 'height="' . $block->getLogoHeight() . '"' : '' ?>
         />
 <?php if ($block->isHomePage()):?>
     </strong>
