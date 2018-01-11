@@ -41,7 +41,7 @@
             <google>
                 <sort_order>200</sort_order>
             </google>
-            <amazon>
+            <!--<amazon>
                 <sort_order>300</sort_order>
             </amazon>
             <twitter>
@@ -64,7 +64,7 @@
             </vkontakte>
             <github>
                 <sort_order>1000</sort_order>
-            </github>
+            </github>-->
         </sociallogin>
     </default>
 </config>
