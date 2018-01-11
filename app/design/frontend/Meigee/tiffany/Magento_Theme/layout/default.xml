@@ -90,7 +90,7 @@
 
 
         <move element="header.panel" destination="header.panel.inner.center" before="-" />
-		<move element="top.links" destination="header.top.left" before="-" />
+		<move element="top.links" destination="header.top.right" before="-" />
 		<move element="header-wrapper" destination="header.panel" after="-" />
         <move element="minicart" destination="header.panel.inner.right" after="-"/>
         <move element="top.search" destination="header.panel.inner.right" after="-"/>

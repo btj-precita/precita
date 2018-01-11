@@ -209,10 +209,10 @@ $name_align = $meigee_helper->getCustomThemeOptionCnf('tiffany_product_listing',
 								<?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow() && $showWishlist): ?>
 									<a href="#" data-post='<?php /* @escapeNotVerified */ echo $block->getAddToWishlistParams($_item); ?>'  class="action towishlist" data-action="add-to-wishlist" title="<?php /* @escapeNotVerified */ echo __('Add to Wish List') ?>">
 									   <i class="ion-heart"></i>
-									   <span><?php /* @escapeNotVerified */ echo __('to Wish List') ?></span>
+<!--									   <span>--><?php ///* @escapeNotVerified */ echo __('to Wish List') ?><!--</span>-->
 									</a>
 								<?php endif; ?>
-								<?php if ($block->getAddToCompareUrl() && $showCompare): ?>
+								<?php if ($block->getAddToCompareUrl() && $showCompare && 0): ?>
 									<?php
 									$compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare');
 									?>
