@@ -170,6 +170,7 @@
         </div>
         <?php echo $block->getChildHtml('form_additional_info'); ?>
     </fieldset>
+    <?php /* @noEscape */ echo $block->getBlockHtml('formkey'); ?>
     <div class="actions-toolbar">
         <div class="primary">
             <button type="submit" class="btn btn-default" title="<?php /* @escapeNotVerified */ echo __('Create an Account') ?>"><span><?php /* @escapeNotVerified */ echo __('Create an Account') ?></span></button>
