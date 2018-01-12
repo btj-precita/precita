@@ -5274,7 +5274,7 @@ body > .loading-mask {z-index: 9999;}
 	background-color: #fff;
 }
 
-#social-login-popup .social-login #bnt-social-login-authentication {
+#social-login-popup .social-login button {
 	color: #fff;
 	background-color: #3ac2cc!important;
 	height: 40px;
@@ -5288,7 +5288,7 @@ body > .loading-mask {z-index: 9999;}
 	margin-top: 20px;
 	width: 100%;
 }
-a.action {
+#social-login a.action {
 	color: rgba(0,0,0,.6);
 	font-family: 'Avenir';
 	font-size: 16px;
@@ -5304,7 +5304,9 @@ a.action {
 	color: #fff;
 }
 a.btn-facebook, a.btn-google {
-	left: 10px;
 	color: #fff;
 	text-transform: initial!important;
+}
+a.btn-facebook span, a.btn-google span {
+	padding-left: 10px;
 }
