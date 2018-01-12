@@ -80,22 +80,12 @@
             <block class="Magento\Framework\View\Element\Template" as="subheader" template="Magento_Theme::html/subheader.phtml" />
 		</referenceBlock>
 
-		<container name="responsive.menu" htmlClass="responsive-menu" htmlTag="div">
-			<block class="Magento\Theme\Block\Html\Topmenu" name="responsive.topnav" template="html/topmenu.phtml" after="-" />
-		</container>
-
-		<container name="menu" htmlClass="desktop-menu" htmlTag="div">
-			<block class="Magento\Theme\Block\Html\Topmenu" name="topnav" template="html/topmenu_desktop.phtml" after="-" />
-		</container>
-
-
         <move element="header.panel" destination="header.panel.inner.center" before="-" />
 		<move element="top.links" destination="header.top.right" before="-" />
 		<move element="header-wrapper" destination="header.panel" after="-" />
         <move element="minicart" destination="header.panel.inner.right" after="-"/>
         <move element="top.search" destination="header.panel.inner.right" after="-"/>
-		<move element="responsive.menu" destination="header.panel.inner.right" after="minicart"/>
-		<move element="menu" destination="menu.block" after="-"/>
+		<move element="catalog.topnav" destination="menu.block" after="-"/>
         <move element="store_language" destination="header.top.right" after="top.links"/>
 		<move element="currency" destination="header.top.right" after="store_language"/>
 		
