@@ -21,6 +21,7 @@
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <referenceContainer name="page.main.title" remove="true"/>
     <referenceContainer name="content">
         <block class="Mageplaza\SocialLogin\Block\Popup\Social" before="-" name="social-login-popup-authentication-social-create" ifconfig="sociallogin/general/is_enabled" template="Mageplaza_SocialLogin::form/social.phtml" />
     </referenceContainer>
