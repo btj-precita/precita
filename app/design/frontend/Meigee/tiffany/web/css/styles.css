@@ -2414,7 +2414,7 @@ body .swatch-attribute.manufacturer .swatch-option.selected {outline: none; colo
 .login-container .block-customer-login .actions-toolbar {margin-top: 1.5em;}
 .login-container .block-customer-login .actions-toolbar .secondary {float: left; margin: .75em 0;}
 .login-container .block-customer-login .field:not(.note) {margin-top: 1em;}
-.login-container .actions-toolbar {margin-top: 0; border-top: 1px solid rgba(0,0,0,.1); padding-top: 1.5em; padding-bottom: 0;}
+.login-container .actions-toolbar {margin-top: 0; border-top: 1px solid rgba(0,0,0,.1); /*padding-top: 1.5em;*/ padding-bottom: 0;}
 
 fieldset.fieldset.with-border {
 	border: 1px solid #ddd;

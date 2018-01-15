@@ -29,8 +29,10 @@ if($this->getRequest()->getModuleName()=='catalog' && $this->getRequest()->getCo
 								<?php }
 							endforeach;
 						} else {
-							$title = $block->getLayout()->getBlock('page.main.title')->getPageTitle();
-							echo '<h1>'.$title.'</h1>';
+						    if ($block->getLayout()->getBlock('page.main.title')) {
+                                $title = $block->getLayout()->getBlock('page.main.title')->getPageTitle();
+                                echo '<h1>'.$title.'</h1>';
+                            }
 						}
 					?>
 				</header>

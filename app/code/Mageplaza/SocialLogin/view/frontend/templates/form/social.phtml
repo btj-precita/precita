@@ -21,6 +21,7 @@
 ?>
 <?php $availableSocials = $block->getAvailableSocials(); ?>
 <?php if ($block->canShow() && sizeof($availableSocials)): ?>
+    <div class="col-xs-12 oe-col"><span class="sa-label">hoặc đăng nhập với</span></div>
     <div class="block social-login-authentication-channel account-social-login">
         <div class="block-content">
             <?php foreach ($availableSocials as $key => $social): ?>
