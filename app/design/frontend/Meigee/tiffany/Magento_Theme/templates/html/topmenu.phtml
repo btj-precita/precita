@@ -19,7 +19,7 @@
 <nav class="navbar navbar-default navigation">
 	<span data-action="toggle-nav" class="action nav-toggle"><i class="ion-navicon"></i><span><?php /* @escapeNotVerified */ echo __('Menu') ?></span></span>
 	<div class="collapse topmenu navbar-collapse">
-		<ul class="nav topmenu navbar-nav" id="nav">
+        <ul class="nav topmenu navbar-nav" id="nav" data-mage-init='{"menu":{"responsive":true, "expanded":true, "delay": 0, "position":{"my":"left top","at":"left bottom"}}}'>
 			<?php /* @escapeNotVerified */ echo $_menu ?>
 			<?php /* @escapeNotVerified */ echo $block->getChildHtml(); ?>
 		</ul>

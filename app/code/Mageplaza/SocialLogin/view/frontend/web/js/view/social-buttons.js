@@ -34,7 +34,6 @@ define(
                     url: allBindings.get('url'),
                     label: allBindings.get('label')
                 };
-
                 socialProvider(config, element);
             }
         };
@@ -57,6 +56,10 @@ define(
 
             isActive: function () {
                 return (typeof this.buttonLists !== 'undefined');
+            },
+
+            labelHtml: function (data) {
+                return '<span class="fa fa-' + data.btn_key + '"></span>' + data.label;
             }
         });
     }

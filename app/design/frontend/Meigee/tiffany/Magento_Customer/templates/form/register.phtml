@@ -42,31 +42,37 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="password" class="label"><span><?php /* @escapeNotVerified */ echo __('Password') ?></span></label>
-                                            <div class="control">
-                                                <input type="password" name="password" id="password"
-                                                       title="<?php /* @escapeNotVerified */ echo __('Password') ?>"
-                                                       class="input-normal input-bordered"
-                                                       data-password-min-length="<?php echo $block->escapeHtml($block->getMinimumPasswordLength()) ?>"
-                                                       data-password-min-character-sets="<?php echo $block->escapeHtml($block->getRequiredCharacterClassesNumber()) ?>"
-                                                       data-validate="{required:true, 'validate-customer-password':true}"
-                                                       autocomplete="off">
-                                                <div id="password-strength-meter-container" data-role="password-strength-meter" >
-                                                    <div id="password-strength-meter" class="password-strength-meter">
-                                                        <?php /* @escapeNotVerified */ echo __('Password Strength'); ?>:
-                                                        <span id="password-strength-meter-label" data-role="password-strength-meter-label" >
+                                            <div class="field password required" data-mage-init='{"passwordStrengthIndicator": {}}'>
+                                                <label for="password" class="label"><span><?php /* @escapeNotVerified */ echo __('Password') ?></span></label>
+                                                <div class="control">
+                                                    <input type="password" name="password" id="password"
+                                                           title="<?php /* @escapeNotVerified */ echo __('Password') ?>"
+                                                           class="input-normal input-bordered"
+                                                           data-password-min-length="<?php echo $block->escapeHtml($block->getMinimumPasswordLength()) ?>"
+                                                           data-password-min-character-sets="<?php echo $block->escapeHtml($block->getRequiredCharacterClassesNumber()) ?>"
+                                                           data-validate="{required:true, 'validate-customer-password':true}"
+                                                           autocomplete="off">
+                                                    <div id="password-strength-meter-container" data-role="password-strength-meter" >
+                                                        <div id="password-strength-meter" class="password-strength-meter">
+                                                            <?php /* @escapeNotVerified */ echo __('Password Strength'); ?>:
+                                                            <span id="password-strength-meter-label" data-role="password-strength-meter-label" >
 								<?php /* @escapeNotVerified */ echo __('No Password'); ?>
 							</span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="password-confirmation" class="label"><span><?php /* @escapeNotVerified */ echo __('Confirm Password') ?></span></label>
-                                            <div class="control">
-                                                <input type="password" name="password_confirmation" title="<?php /* @escapeNotVerified */ echo __('Confirm Password') ?>" id="password-confirmation" class="input-normal input-bordered" data-validate="{required:true, equalTo:'#password'}" autocomplete="off">
+                                            <div class="field confirmation required">
+                                                <label for="password-confirmation" class="label"><span><?php /* @escapeNotVerified */ echo __('Confirm Password') ?></span></label>
+                                                <div class="control">
+                                                    <input type="password" name="password_confirmation" title="<?php /* @escapeNotVerified */ echo __('Confirm Password') ?>" id="password-confirmation" class="input-normal input-bordered" data-validate="{required:true, equalTo:'#password'}" autocomplete="off">
+                                                </div>
                                             </div>
                                         </div>
+                                        <?php echo $block->getChildHtml('form_additional_info'); ?>
+
                                         <div class="form-group">
                                             <?php if ($block->isNewsletterEnabled()): ?>
                                                 <div class="field choice newsletter">
