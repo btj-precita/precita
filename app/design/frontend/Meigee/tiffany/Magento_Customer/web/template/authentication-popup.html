@@ -4,36 +4,11 @@
  * See COPYING.txt for license details.
  */
  -->
-
-<div class="block-authentication row"
+<div class="social-login block-container authentication">
+<div class="block-authentication"
      data-bind="afterRender: setModalElement, blockLoader: isLoading"
      style="display: none">
-    <div class="block block-new-customer col-sm-6"
-         data-bind="attr: {'data-label': $t('or')}">
-        <div class="block-title">
-            <strong id="block-new-customer-heading"
-                    role="heading"
-                    aria-level="2"
-                    data-bind="i18n: 'Checkout out as a new customer'"></strong>
-        </div>
-        <div class="block-content" aria-labelledby="block-new-customer-heading">
-            <p data-bind="i18n: 'Creating an account has many benefits:'"></p>
-            <ul>
-                <li data-bind="i18n: 'See order and shipping status'"></li>
-                <li data-bind="i18n: 'Track order history'"></li>
-                <li data-bind="i18n: 'Check out faster'"></li>
-            </ul>
-            <div class="actions-toolbar">
-                <div class="primary">
-                    <a class="action action-register primary btn btn-default" data-bind="attr: {href: registerUrl}">
-                        <span data-bind="i18n: 'Create an Account'"></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="block block-customer-login col-sm-6"
+    <div class="block block-customer-login col-md-12"
          data-bind="attr: {'data-label': $t('or')}">
         <div class="block-title">
             <strong id="block-customer-login-heading"
@@ -47,7 +22,7 @@
         <!-- ko foreach: getRegion('before') -->
         <!-- ko template: getTemplate() --><!-- /ko -->
         <!-- /ko -->
-        <div class="block-content" aria-labelledby="block-customer-login-heading">
+        <div class="block-content" aria-labelledby="block-customer-login-heading" id="social-login-popup">
             <form class="form form-login"
                   method="post"
                   data-bind="submit:login"
@@ -59,7 +34,7 @@
                             <input name="username"
                                    id="email"
                                    type="email"
-                                   class="form-control"
+                                   class="input-text"
                                    data-bind="attr: {autocomplete: autocomplete}"
                                    data-validate="{required:true, 'validate-email':true}">
                         </div>
@@ -69,7 +44,7 @@
                         <div class="control">
                             <input name="password"
                                    type="password"
-                                   class="form-control"
+                                   class="input-text"
                                    id="pass"
                                    data-bind="attr: {autocomplete: autocomplete}"
                                    data-validate="{required:true}">
@@ -78,23 +53,28 @@
                     <!-- ko foreach: getRegion('additional-login-form-fields') -->
                     <!-- ko template: getTemplate() --><!-- /ko -->
                     <!-- /ko -->
+                    <input name="context" type="hidden" value="checkout" />
+
+                    <div class="field actions-toolbar">
+                        <div class="secondary">
+                        <button type="button" class="btn btn-md btn-primary" id="bnt-social-login-authentication">
+                            <span data-bind="i18n: 'Sign In'"></span></button>
+                        </div>
+                    </div>
+                    <div class="secondary">
+                        <a class="action" data-bind="attr: {href: forgotPasswordUrl}">
+                            <span data-bind="i18n: 'Forgot Your Password?'"></span>
+                        </a>
                     </div>
                     <div class="actions-toolbar">
-                        <input name="context" type="hidden" value="checkout" />
-                        <div class="primary">
-                            <button type="submit" class="action action-login secondary btn btn-default" name="send" id="send2">
-                                <span data-bind="i18n: 'Sign In'"></span>
-                            </button>
-                        </div>
-                        <!-- ko foreach: getRegion('social-login-buttons') -->
-                        <!-- ko template: getTemplate() --><!-- /ko -->
-                        <!-- /ko -->
                         <div class="secondary">
-                            <a class="action" data-bind="attr: {href: forgotPasswordUrl}">
-                                <span data-bind="i18n: 'Forgot Your Password?'"></span>
-                            </a>
+                            <span>Don't have an account?</span>
+                            <a class="action create" data-bind="attr: {href: registerUrl}"><span>Sign Up Now</span></a>
                         </div>
                     </div>
+                    <!-- ko foreach: getRegion('social-login-buttons') -->
+                    <!-- ko template: getTemplate() --><!-- /ko -->
+                    <!-- /ko -->
                 </div>
             </form>
         </div>

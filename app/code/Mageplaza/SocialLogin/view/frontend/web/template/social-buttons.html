@@ -22,7 +22,7 @@
 
 <!-- ko if: isActive() -->
 <div><span class="sa-label" data-bind="i18n: 'or sign in with social'"></span></div>
-<div class="block social-login-authentication-popup col-mp">
+<div class="block social-login-authentication-channel col-mp mp-12">
     <div class="block-content" data-bind="foreach: socials()">
 			<div class="actions-toolbar social-btn" data-bind="css: key + '-login'">
                 <a class="btn btn-block btn-social" data-bind="css: 'btn-' + btn_key, socialButton: $parent.isActive, url: url, html: $parent.labelHtml($data)">

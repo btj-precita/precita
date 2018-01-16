@@ -5310,3 +5310,18 @@ a.btn-facebook, a.btn-google {
 a.btn-facebook span, a.btn-google span {
 	padding-left: 10px;
 }
+aside.popup-authentication {
+	z-index: 99999;
+}
+aside.popup-authentication .modal-inner-wrap {
+	min-width: 25%;
+	width: 30%;
+}
+aside.popup-authentication .modal-inner-wrap .btn-primary,
+aside.popup-authentication .modal-inner-wrap .actions-toolbar,
+aside.popup-authentication .modal-inner-wrap .secondary,
+aside.popup-authentication .modal-inner-wrap .block,
+aside.popup-authentication .modal-inner-wrap .btn-social
+{
+	width: 100%;
+}
