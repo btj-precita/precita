@@ -30,6 +30,35 @@
         </referenceBlock>
         <referenceContainer name="content">
             <block class="Mageplaza\SocialLogin\Block\Popup\Social" name="social-authentication-popup" as="social.authentication.popup" template="Mageplaza_SocialLogin::popup/authentication/social.phtml"/>
+            <block class="Mageplaza\SocialLogin\Block\Popup" name="social-login-popup" as="popup.modal" template="popup.phtml">
+                <block class="Mageplaza\SocialLogin\Block\Form\Login" name="social-login-popup-authentication" as="popup.authentication" template="Mageplaza_SocialLogin::popup/form/authentication.phtml">
+                    <block class="Magento\Captcha\Block\Captcha" name="social-login-captcha" as="login.captcha" after="-">
+                        <action method="setFormId">
+                            <argument name="formId" xsi:type="string">user_login</argument>
+                        </action>
+                        <action method="setImgWidth">
+                            <argument name="width" xsi:type="string">230</argument>
+                        </action>
+                        <action method="setImgHeight">
+                            <argument name="width" xsi:type="string">50</argument>
+                        </action>
+                    </block>
+                </block>
+                <block class="Mageplaza\SocialLogin\Block\Form\Register" name="social-login-popup-create" as="popup.create" template="Mageplaza_SocialLogin::popup/form/create.phtml">
+                    <block class="Mageplaza\SocialLogin\Block\Popup\Social" name="social-login-popup-create-social" as="popup.create.social" template="popup/form/create/social.phtml" />
+                    <block class="Magento\Captcha\Block\Captcha" name="social-create-captcha" as="create.captcha" after="-">
+                        <action method="setFormId">
+                            <argument name="formId" xsi:type="string">user_create</argument>
+                        </action>
+                        <action method="setImgWidth">
+                            <argument name="width" xsi:type="string">230</argument>
+                        </action>
+                        <action method="setImgHeight">
+                            <argument name="width" xsi:type="string">50</argument>
+                        </action>
+                    </block>
+                </block>
+            </block>
         </referenceContainer>
         <referenceBlock name="authentication-popup">
             <arguments>
