@@ -5305,7 +5305,7 @@ body > .loading-mask {z-index: 9999;}
 }
 a.btn-facebook, a.btn-google {
 	color: #fff;
-	text-transform: initial!important;
+	/*text-transform: initial!important;*/
 }
 a.btn-facebook span, a.btn-google span {
 	padding-left: 10px;
