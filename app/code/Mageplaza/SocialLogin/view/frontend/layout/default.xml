@@ -32,6 +32,7 @@
             <block class="Mageplaza\SocialLogin\Block\Popup\Social" name="social-authentication-popup" as="social.authentication.popup" template="Mageplaza_SocialLogin::popup/authentication/social.phtml"/>
             <block class="Mageplaza\SocialLogin\Block\Popup" name="social-login-popup" as="popup.modal" template="popup.phtml">
                 <block class="Mageplaza\SocialLogin\Block\Form\Login" name="social-login-popup-authentication" as="popup.authentication" template="Mageplaza_SocialLogin::popup/form/authentication.phtml">
+                    <block class="Mageplaza\SocialLogin\Block\Popup\Social" name="social-login-popup-authentication-social" as="popup.authentication.social" template="popup/form/authentication/social.phtml" />
                     <block class="Magento\Captcha\Block\Captcha" name="social-login-captcha" as="login.captcha" after="-">
                         <action method="setFormId">
                             <argument name="formId" xsi:type="string">user_login</argument>
