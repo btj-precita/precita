@@ -1,0 +1,15 @@
+<?php
+/**
+ * social.phtml
+ *
+ * @copyright Copyright © 2018 Staempfli AG. All rights reserved.
+ * @author    juan.alonso@staempfli.com
+ */
+?>
+<?php $availableSocials = $block->getAvailableSocials(); ?>
+<?php $authenConfig = $block->getSocialButtonsConfig(); ?>
+<?php if ($block->canShow(\Mageplaza\SocialLogin\Model\System\Config\Source\Position::PAGE_AUTHEN) && sizeof($availableSocials)): ?>
+    <script>
+        window.socialAuthenticationPopup = <?php /* @escapeNotVerified */ echo \Zend_Json::encode($authenConfig); ?>;
+    </script>
+<?php endif; ?>

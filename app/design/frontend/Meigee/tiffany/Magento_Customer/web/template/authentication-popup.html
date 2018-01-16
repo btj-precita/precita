@@ -86,6 +86,9 @@
                                 <span data-bind="i18n: 'Sign In'"></span>
                             </button>
                         </div>
+                        <!-- ko foreach: getRegion('social-login-buttons') -->
+                        <!-- ko template: getTemplate() --><!-- /ko -->
+                        <!-- /ko -->
                         <div class="secondary">
                             <a class="action" data-bind="attr: {href: forgotPasswordUrl}">
                                 <span data-bind="i18n: 'Forgot Your Password?'"></span>
