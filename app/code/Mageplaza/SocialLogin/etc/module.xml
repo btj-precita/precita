@@ -24,6 +24,7 @@
     <module name="Mageplaza_SocialLogin" setup_version="1.0.0">
         <sequence>
             <module name="Mageplaza_Core"/>
+            <module name="Magento_Checkout"/>
         </sequence>
     </module>
 </config>

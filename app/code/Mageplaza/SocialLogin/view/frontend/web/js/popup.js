@@ -41,13 +41,6 @@ define([
             forgotBtn: '#social-form-login .action.remind',
             createBtn: '#social-form-login .action.create',
             formLoginUrl: '',
-            /*Forgot*/
-            forgotFormContainer: '.social-login.forgot',
-            forgotFormContent: '.social-login.forgot .block-content',
-            forgotForm: '#social-form-password-forget',
-            forgotSendBtn: '#social-form-password-forget .action.send',
-            forgotBackBtn: '#social-form-password-forget .action.back',
-            forgotFormUrl: '',
             /*Create*/
             createFormContainer: '.social-login.create',
             createFormContent: '.social-login.create .block-content',
@@ -70,19 +63,15 @@ define([
         initObject: function () {
             this.loginForm = $(this.options.loginForm);
             this.createForm = $(this.options.createForm);
-            this.forgotForm = $(this.options.forgotForm);
 
-            this.forgotFormContainer = $(this.options.forgotFormContainer);
             this.createFormContainer = $(this.options.createFormContainer);
             this.loginFormContainer = $(this.options.loginFormContainer);
 
             this.loginFormContent = $(this.options.loginFormContent);
-            this.forgotFormContent = $(this.options.forgotFormContent);
             this.createFormContent = $(this.options.createFormContent);
 
             this.loginCaptchaImg = $(this.options.loginCaptchaImg);
             this.createCaptchaImg = $(this.options.createCaptchaImg);
-            this.forgotCaptchaImg = $(this.options.forgotCaptchaImg);
         },
 
         initLink: function () {
@@ -128,13 +117,9 @@ define([
 
             $(this.options.loginBtn).on('click', this.processLogin.bind(this));
             $(this.options.createBtn).on('click', this.showCreate.bind(this));
-            $(this.options.forgotBtn).on('click', this.showForgot.bind(this));
 
             $(this.options.createAccBtn).on('click', this.processCreate.bind(this));
             $(this.options.createBackBtn).on('click', this.showLogin.bind(this));
-
-            $(this.options.forgotSendBtn).on('click', this.processForgot.bind(this));
-            $(this.options.forgotBackBtn).on('click', this.showLogin.bind(this));
 
             this.loginForm.find('input').keypress(function (event) {
                 var code = event.keyCode || event.which;
@@ -148,30 +133,16 @@ define([
                     self.processCreate();
                 }
             });
-            this.forgotForm.find('input').keypress(function (event) {
-                var code = event.keyCode || event.which;
-                if (code == 13) {
-                    self.processForgot();
-                }
-            });
         },
 
         showLogin: function () {
             this.loginFormContainer.show();
-            this.forgotFormContainer.hide();
             this.createFormContainer.hide();
         },
 
         showCreate: function () {
             this.loginFormContainer.hide();
-            this.forgotFormContainer.hide();
             this.createFormContainer.show();
-        },
-
-        showForgot: function () {
-            this.loginFormContainer.hide();
-            this.forgotFormContainer.show();
-            this.createFormContainer.hide();
         },
 
         processLogin: function () {
@@ -220,36 +191,6 @@ define([
             }).fail(function () {
                 self.removeLoading(self.loginFormContent);
                 self.addMsg(self.loginFormContent, 'Could not authenticate. Please try again later', options.errorMsgClass);
-            });
-        },
-
-        processForgot: function () {
-            if (!this.forgotForm.valid()) {
-                return;
-            }
-
-            var self = this,
-                options = this.options,
-                parameters = this.forgotForm.serialize();
-
-            this.appendLoading(this.forgotFormContent);
-            this.removeMsg(this.forgotFormContent, options.errorMsgClass);
-            this.removeMsg(this.forgotFormContent, options.successMsgClass);
-
-            $.ajax({
-                url: options.forgotFormUrl,
-                type: 'POST',
-                data: parameters
-            }).done(function (response) {
-                self.removeLoading(self.forgotFormContent);
-                if (response.success) {
-                    self.addMsg(self.forgotFormContent, response.message, options.successMsgClass);
-                } else {
-                    self.addMsg(self.forgotFormContent, response.message, options.errorMsgClass);
-                }
-                if (response.imgSrc && self.forgotCaptchaImg.length) {
-                    self.forgotCaptchaImg.attr('src', response.imgSrc);
-                }
             });
         },
 
