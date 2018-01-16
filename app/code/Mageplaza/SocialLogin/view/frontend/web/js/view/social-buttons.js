@@ -28,7 +28,6 @@ define(
     ],
     function ($, ko, Component, socialProvider) {
         'use strict';
-
         ko.bindingHandlers.socialButton = {
             init: function (element, valueAccessor, allBindings) {
                 var config = {
