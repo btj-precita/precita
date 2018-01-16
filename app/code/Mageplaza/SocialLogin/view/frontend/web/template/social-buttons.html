@@ -21,10 +21,11 @@
  -->
 
 <!-- ko if: isActive() -->
+<div><span class="sa-label" data-bind="i18n: 'or sign in with social'"></span></div>
 <div class="block social-login-authentication-popup col-mp">
     <div class="block-content" data-bind="foreach: socials()">
 			<div class="actions-toolbar social-btn" data-bind="css: key + '-login'">
-                <a class="btn btn-block btn-social" data-bind="css: 'btn-' + btn_key, socialButton: $parent.isActive, url: url, label: label">
+                <a class="btn btn-block btn-social" data-bind="css: 'btn-' + btn_key, socialButton: $parent.isActive, url: url, html: $parent.labelHtml($data)">
                     <span class="fa" data-bind="css: 'fa-' + btn_key"></span>
                 </a>
             </div>
