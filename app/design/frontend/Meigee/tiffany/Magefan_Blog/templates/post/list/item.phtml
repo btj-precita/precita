@@ -1,0 +1,54 @@
+<?php
+/**
+ * Copyright © 2015 Ihor Vansach (ihor@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details
+ * (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog post list item template
+ *
+ * @var $block \Magefan\Blog\Block\Post\AbstractPost
+ */
+?>
+<?php
+$_post = $this->getPost();
+$_postUrl = $_post->getPostUrl();
+$_postName = $block->escapeHtml($_post->getTitle(), null, true);
+
+$featuredImage = $_post->getFeaturedImage();
+?>
+<div class="col-sm-6 article-item active post-holder-<?php echo $_post->getId(
+) ?>">
+    <article class="blog-wrapper">
+        <div class="blog-thumb">
+            <a class="thumb rec-fill full-cover"
+               href="<?php echo $_postUrl ?>"
+               style="background-image: url(<?php echo(!empty($featuredImage)
+                   ? $featuredImage : ''); ?>);">
+
+                <img class="img-semantic"
+                     src="<?php echo(!empty($featuredImage) ? $featuredImage
+                         : ''); ?>"
+                     alt="<?php echo $_post->getTitle(); ?>"/>
+            </a>
+        </div>
+
+        <h1 class="blog-heading heading-md under-sep">
+            <a href="<?php echo $_postUrl ?>"><?php echo $_postName; ?></a>
+        </h1>
+
+        <div class="blog-desc">
+            <p>
+                <?php echo strip_tags($block->getShorContent()) . '...'; ?>
+                <a class="readmore" href="<?php echo $_postUrl ?>"
+                   title="<?php echo $_postName ?>">
+                    <?php echo __('Read more') ?>
+                </a>
+            </p>
+        </div>
+    </article>
+</div>

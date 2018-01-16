@@ -2,3 +2,13 @@
     background-image: url("../images/footermail.png");
     float:none;
 }
+
+[class*=heading-] {
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.related-blogs{
+    text-align: center;
+}

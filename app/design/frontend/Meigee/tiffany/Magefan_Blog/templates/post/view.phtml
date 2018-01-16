@@ -1,0 +1,36 @@
+<?php
+/**
+ * Copyright © 2015 Ihor Vansach (ihor@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog post view template
+ *
+ * @var $block \Magefan\Blog\Block\Post\View
+ */
+?>
+<?php
+    $_post = $this->getPost();
+    $_postUrl = $_post->getPostUrl();
+    $_postName = $block->escapeHtml($_post->getTitle(), null, true);
+?>
+
+<article class="row">
+    <div class="col-xs-12">
+        <div class="blog-details-title under-sep"></div>
+        <div class="blog-details-time">
+            <?php echo $this->getInfoHtml() ?>
+        </div>
+        <div class="blog-details-content post-content">
+            <?php echo $block->getContent() ?>
+        </div>
+    </div>
+</article>
+
+<aside class="row related-blogs">
+    <?php echo $this->getChildHtml('blog.post.bottom') ?>
+</aside>
